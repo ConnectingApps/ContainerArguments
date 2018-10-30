@@ -4,9 +4,11 @@ EXPOSE 80
 
 FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /src
-COPY ContainerArguments/ContainerArguments.csproj ContainerArguments/
+ARG inputfolder='ContainerArguments'
+ARG outputfolder=''
+COPY ${inputfolder}/ContainerArguments.csproj ContainerArguments/
 RUN dotnet restore ContainerArguments/ContainerArguments.csproj
-COPY . .
+COPY . .${outputfolder}
 WORKDIR /src/ContainerArguments
 RUN dotnet build ContainerArguments.csproj -c Release -o /app
 
