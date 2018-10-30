@@ -7,7 +7,7 @@ git clone https://github.com/ConnectingApps/ContainerArguments.git
 cd ContainerArguments
 cd ContainerArguments
 docker build --build-arg inputfolder="" --build-arg outputfolder="/ContainerArguments/" -t ca .
-docker run -p 5001:80
+docker run -p 5001:80 ca
 ```
 Visit http://localhost:5001/api/values to see some results.
 
