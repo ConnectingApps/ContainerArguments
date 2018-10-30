@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  containerarguments:
+    image: ${DOCKER_REGISTRY}containerarguments
+    build:
+      context: .
+      dockerfile: ContainerArguments/Dockerfile
